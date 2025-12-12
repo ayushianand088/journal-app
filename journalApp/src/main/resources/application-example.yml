@@ -1,0 +1,11 @@
+spring:
+  data:
+    mongodb:
+      uri:
+      database: journaldb
+      auto-index-creation: true
+
+server:
+  port: 8081
+  serverlet:
+    context-path: /journal
