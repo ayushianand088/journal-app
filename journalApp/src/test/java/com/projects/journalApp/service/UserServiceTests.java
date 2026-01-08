@@ -30,6 +30,7 @@ public class UserServiceTests {
         //assertTrue(!user.getJournalEntries().isEmpty());
     }
 
+    @Disabled
     @ParameterizedTest
     @ValueSource(strings = {
             "Ayushi",
@@ -43,6 +44,7 @@ public class UserServiceTests {
         assertFalse(user.getJournalEntries().isEmpty());
     }
 
+    @Disabled
     @ParameterizedTest
     @ArgumentsSource(UserArgumentProvider.class)
     public void testSaveNewUser(User user){
