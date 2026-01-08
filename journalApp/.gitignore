@@ -7,6 +7,9 @@ target/
 .mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/
+*.yml
+*.log
+/htmlReport
 
 ### STS ###
 .apt_generated
