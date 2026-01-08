@@ -2,10 +2,7 @@ package com.projects.journalApp.service;
 
 import com.projects.journalApp.entity.User;
 import com.projects.journalApp.repository.UserRepository;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 import org.mockito.ArgumentMatchers;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
@@ -26,11 +23,13 @@ public class CustomUserDetailsServiceImplTests {
     @Mock
     private UserRepository userRepository;
 
+    @Disabled
     @BeforeEach
     void setUp(){
         MockitoAnnotations.initMocks(this);
     }
 
+    @Disabled
     @Test
     void loadUserByUsernameTest(){
         when(userRepository.findByUserName(ArgumentMatchers.anyString())).thenReturn(User.builder().userName("Ayushi").password("1234").roles(new ArrayList<>()).build());

@@ -3,7 +3,9 @@ package com.projects.journalApp.service;
 import com.projects.journalApp.entity.JournalEntry;
 import com.projects.journalApp.entity.User;
 import com.projects.journalApp.repository.JournalEntryRepository;
+import lombok.extern.slf4j.Slf4j;
 import org.bson.types.ObjectId;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
@@ -12,6 +14,7 @@ import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 
+@Slf4j
 @Component
 public class JournalEntryService {
 
@@ -58,7 +61,7 @@ public class JournalEntryService {
                 journalEntryRepository.deleteById(id);
             }
         } catch (Exception e){
-            System.out.println(e);
+            log.error("Error occurred",e);
             throw new RuntimeException("An error occurred while deleting the entry. ", e);
         }
         return removed;
